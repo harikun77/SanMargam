@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-page="program">
+<head>
+  <title>Program — Revealed on Event Day</title>
+  <meta name="description" content="SanMargam fundraiser supporting USKids4Water."/>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="stylesheet" href="css/styles.css"/>
+<script defer src="js/main.js"></script>
+
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img id="logo-uskids" class="logo" alt="USKids4Water logo"/>
+        <img id="logo-sanmargam" class="logo" alt="Sanmargam logo"/>
+        <span class="brand-name" id="brand-name">SanMargam</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="uskids4water.html">USKids4Water</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="dancers.html">Dancers</a></li>
+        <li><a id="rsvp-link" class="btn" target="_blank" rel="noopener">RSVP</a></li>
+        <li><a id="donate-link" class="btn-outline" target="_blank" rel="noopener">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+<main class="container">
+  <header class="page-header">
+    <h1>Program</h1>
+    <p id="program-message"></p>
+  </header>
+  <section class="card">
+    <h3>Countdown</h3>
+    <p>Revealing on <strong id="program-date"></strong> at <strong id="program-time"></strong>.</p>
+    <form class="notify" onsubmit="return false" aria-disabled="true">
+      <label>Email me when the program is live</label>
+      <div class="row">
+        <input type="email" placeholder="you@example.com" disabled aria-disabled="true"/>
+        <button class="btn" disabled aria-disabled="true">Notify Me</button>
+      </div>
+      <p class="muted small">This is a placeholder only—no emails will be sent.</p>
+    </form>
+  </section>
+</main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong id="footer-brand">SanMargam</strong>
+        <p class="muted">A community dance fundraiser supporting USKids4Water’s Rural Tech Hub in Madurai.</p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p><a href="mailto:uskids4water@gmail.com">uskids4water@gmail.com</a></p>
+      </div>
+      <div>
+        <strong>Sitemap</strong>
+        <ul class="sitemap">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="uskids4water.html">USKids4Water</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="dancers.html">Dancers</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <a id="donate-link-footer" class="btn" target="_blank" rel="noopener">Donate</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
