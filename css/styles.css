@@ -34,11 +34,11 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .cta-row{display:flex;gap:10px;flex-wrap:wrap}
 @media (max-width:768px){.cta-row{gap:8px}.cta-row .btn,.cta-row .btn-outline{padding:8px 12px;font-size:14px}}.grid{display:grid;gap:18px;margin:26px 0}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}.card.info h3{margin-top:0}
-.combined-goal-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);display:grid;grid-template-columns:1fr 1fr;gap:24px;min-height:450px;align-content:start}
+.combined-goal-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .goal-section h3{margin:0 0 12px 0;font-size:1.3em;color:var(--accent)}
 .goal-section p{margin:0;color:var(--muted);font-size:0.95em}
 .funds-section h4{margin:0 0 12px 0;font-size:1.1em;color:var(--text)}
-@media (max-width:768px){.combined-goal-card{grid-template-columns:1fr;gap:20px;min-height:auto}}
+@media (max-width:768px){.about-section{height:auto}.about-section .combined-goal-card{margin-top:24px}.combined-goal-card{grid-template-columns:1fr;gap:20px}}
 .kv{list-style:none;margin:0;padding:0;display:grid;gap:12px}.kv li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:8px;align-items:center}
 .kv li strong{color:var(--accent);font-weight:600}
 .kv li span{text-align:right;max-width:60%}
@@ -54,6 +54,8 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .vsda-visit-btn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#00253a;padding:8px 16px;border-radius:999px;font-weight:600;font-size:0.9em}
 .vsda-content{line-height:1.7}
 .vsda-content p{margin-bottom:16px;text-align:justify}
+.about-section{display:flex;flex-direction:column;height:100%}
+.about-section .combined-goal-card{margin-top:auto}
 .video-section{margin-top:0}
 .video-section h3{margin-bottom:16px;color:var(--accent)}
 .video-container{position:relative;width:100%;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
