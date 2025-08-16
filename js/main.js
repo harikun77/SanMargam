@@ -60,7 +60,12 @@ async function loadContent(){
 
     const trio = document.getElementById('dancers-trio');
     const trioCap = document.getElementById('dancers-trio-caption');
-    if(trio) trio.src = data.home.dancersTrioImage;
+    console.log('Dancers trio element:', trio);
+    console.log('Dancers trio image path:', data.home.dancersTrioImage);
+    if(trio) {
+      trio.src = data.home.dancersTrioImage;
+      console.log('Set dancers trio src to:', data.home.dancersTrioImage);
+    }
     if(trioCap) trioCap.textContent = data.home.dancersTrioCaption;
 
     const statsDiv = document.getElementById('home-stats');
