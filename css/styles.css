@@ -23,6 +23,11 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .list li{margin:8px 0;padding-left:16px;position:relative}
 .list li:before{content:"•";color:var(--accent);font-weight:bold;position:absolute;left:0}
 .list.small li{font-size:0.9em;margin:6px 0}
+.vsda-section{margin-top:32px}
+.vsda-header{text-align:center;margin-bottom:24px}
+.vsda-logo{max-width:300px;height:auto;margin-bottom:16px}
+.vsda-content{max-width:800px;margin:0 auto;line-height:1.7}
+.vsda-content p{margin-bottom:16px;text-align:justify}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#0a1118;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px}
 .page-header{margin-top:22px}.profile{display:flex;gap:12px;align-items:flex-start}.profile img{width:96px;height:96px;object-fit:cover;border-radius:12px}
 img{max-width:100%;display:block;border-radius:12px}
