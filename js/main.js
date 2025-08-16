@@ -3,7 +3,12 @@ async function loadContent(){
   // local preview override
   let data = null;
   try{ const override = localStorage.getItem('contentOverride'); if(override) data = JSON.parse(override);}catch(e){}
-  if(!data){ const res = await fetch('content.json?ts=' + Date.now(), {cache:'no-store'}); data = await res.json(); }
+  if(!data){ 
+    console.log('Fetching content.json...'); // Debug log
+    const res = await fetch('content.json?ts=' + Date.now(), {cache:'no-store'}); 
+    data = await res.json(); 
+    console.log('Content loaded:', data); // Debug log
+  }
   if(data?.site?.title) document.title = data.site.title;
 
   const uskidsLogo = document.getElementById('logo-uskids');
