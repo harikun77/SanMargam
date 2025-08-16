@@ -1,8 +1,10 @@
 {
   "site": {
-    "brand": "SanMargam",
+    "title": "Books Beyond Borders \u2014 USKids4Water Fundraiser",
+    "brand": "Books Beyond Borders",
     "rsvpUrl": "https://evite.me/FcHTKKabpf",
-    "donateUrl": "https://www.uskids4water.org/",
+    "donateUrl": "https://www.zeffy.com/en-US/donation-form/books-beyond-borders-by-uskids4water",
+    "donateQR": "assets/donate-qr.jpg",
     "venue": "Saratoga Civic Theatre",
     "address": "13777 Fruitvale Ave, Saratoga, CA 95070",
     "date": "Sunday, August 17, 2025",
@@ -15,11 +17,11 @@
   },
   "home": {
     "hero": {
-      "title": "Bharatanatyam Evening \u2014 A Fundraiser for Children & Water",
-      "subtitle": "An evening of classical dance celebrating culture while supporting USKids4Water\u2019s Rural Tech Hub in Madurai.",
-      "background": "assets/hero_broll.jpg"
+      "title": "Books Beyond Borders",
+      "subtitle": "A SanMargam Bharatanatyam fundraiser powering USKids4Water\u2019s Library Learning & Rural Tech Hub in Perayur, Tamil Nadu.",
+      "background": "assets/nataraja-banner.jpg"
     },
-    "about": "This fundraiser benefits USKids4Water, a youth-led nonprofit that works on environmental, health, and educational projects in rural India. Proceeds support the Rural Tech Hub in Madurai\u2014computers, coding and robotics kits, English learning resources, and mentor support.",
+    "about": "Books Beyond Borders brings technology, language learning, and creativity to rural students. Your support launches a Rural Tech Hub and Library Learning space in Perayur\u2014computers and internet, coding and robotics, English practice, and inspiring reading corners.",
     "goal": "$20,000",
     "fundsHelp": [
       "Computers, projector, printers (3D & regular)",
@@ -47,7 +49,9 @@
         "label": "Youth-led Projects",
         "value": "50+"
       }
-    ]
+    ],
+    "dancersTrioImage": "assets/dancers/trio-placeholder.jpg",
+    "dancersTrioCaption": "Principal dancers \u2014 Sahana Kumar, Kirthana Warrier & Sarika Rajan"
   },
   "uskids4water": {
     "mission": "USKids4Water elevates awareness\u2014and action\u2014around water, environment, health, and education. Guided by the mission to \u201csow the seed of empathy in everyone\u2019s mind,\u201d student volunteers (with mentor support) design and deliver projects that build skills, expand opportunity, and foster service-minded leadership.",

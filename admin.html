@@ -9,38 +9,31 @@
   <style>
     .admin-wrap{max-width:1100px;margin:0 auto;padding:20px}
     .toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-    .toolbar .btn, .toolbar .btn-outline{font-size:14px}
     .grid-admin{display:grid;grid-template-columns:260px 1fr;gap:16px}
     .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
     .list-nav{list-style:none;margin:0;padding:0}
-    .list-nav li{margin:6px 0}
-    .list-nav a{display:block;padding:8px 10px;border-radius:10px;border:1px solid transparent}
+    .list-nav a{display:block;padding:8px 10px;border-radius:10px;margin:6px 0;border:1px solid transparent}
     .list-nav a.active{background:#0e1620;border-color:var(--line)}
     .field{margin:10px 0;display:flex;flex-direction:column}
     .field label{font-size:13px;color:var(--muted);margin-bottom:4px}
-    .field input[type=text], .field input[type=url], .field textarea{background:#0b1118;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px}
+    .field input, .field textarea{background:#0b1118;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px}
     textarea{min-height:90px;resize:vertical}
     .row{display:flex;gap:8px;flex-wrap:wrap}
-    .smallhint{color:var(--muted);font-size:12px}
     .repeaters .item{border:1px dashed var(--line);border-radius:12px;padding:10px;margin:8px 0}
-    .item .row > *{flex:1}
-    .danger{background:#3b0d12;border-color:#7a1e26}
-    .success{background:#0f1a27;border-color:#20415f}
     .sticky-bar{position:sticky;bottom:0;display:flex;gap:10px;padding:10px;background:rgba(7,11,16,.8);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:12px;margin-top:12px}
-    .mutedlink{color:#9fb6d1;text-decoration:underline}
+    .smallhint{color:var(--muted);font-size:12px}
   </style>
 </head>
 <body>
   <div class="admin-wrap">
     <h1>Admin — Edit Site Content</h1>
-    <p class="muted small">This editor works entirely in your browser. Changes are not saved to the server automatically. When you’re done, click <strong>Download content.json</strong> and commit it to GitHub.</p>
+    <p class="muted small">Edit fields below and click <strong>Download content.json</strong>. Commit the file to your GitHub repo to publish changes.</p>
 
     <div class="toolbar">
       <input type="file" id="file-input" accept="application/json" style="display:none"/>
       <button class="btn-outline" id="load-btn">Load content.json (from file)</button>
-      <button class="btn-outline" id="reset-btn" title="Reload content.json from the site">Reset to current</button>
+      <button class="btn-outline" id="reset-btn">Reset to current</button>
       <a class="btn" id="download-btn" download="content.json">Download content.json</a>
-      <a class="btn-outline" href="content.json" download>Backup current content.json</a>
       <a class="btn-outline" href="index.html">← Back to site</a>
     </div>
 
@@ -53,12 +46,9 @@
           <li><a href="#program">Program</a></li>
           <li><a href="#dancers">Dancers</a></li>
         </ul>
-        <p class="smallhint">Tip: Paste image paths like <code>assets/hero_broll.jpg</code>. Upload images to the <code>assets/</code> folder in your repo.</p>
+        <p class="smallhint">Tip: Upload images to <code>assets/</code> and paste paths, e.g. <code>assets/donate-qr.jpg</code>.</p>
       </nav>
-
-      <section class="panel" id="editor">
-        <!-- Dynamic forms injected here -->
-      </section>
+      <section class="panel" id="editor"></section>
     </div>
 
     <div class="sticky-bar">
@@ -66,9 +56,7 @@
       <button class="btn-outline" id="validate-btn">Validate</button>
       <span id="status" class="smallhint"></span>
     </div>
-    <p class="smallhint">Need help? <a class="mutedlink" href="https://docs.github.com/en/pages" target="_blank" rel="noopener">Publish to GitHub Pages</a></p>
   </div>
-
   <script src="js/admin.js"></script>
 </body>
 </html>
