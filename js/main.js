@@ -104,9 +104,20 @@ async function loadContent(){
     const aboutBtn = document.getElementById('donate-link-about');
     const learnBtn = document.getElementById('donate-link-learn');
     const donateBtn = document.getElementById('donate-link-donate');
-    if(aboutBtn) aboutBtn.href = data.uskids4water.websiteUrl;
-    if(learnBtn) learnBtn.href = data.uskids4water.websiteUrl;
-    if(donateBtn) donateBtn.href = data.uskids4water.websiteUrl;
+    console.log('USKids4Water buttons found:', { aboutBtn, learnBtn, donateBtn });
+    console.log('USKids4Water website URL:', data.uskids4water.websiteUrl);
+    if(aboutBtn) {
+      aboutBtn.href = data.uskids4water.websiteUrl;
+      console.log('Set about button href to:', data.uskids4water.websiteUrl);
+    }
+    if(learnBtn) {
+      learnBtn.href = data.uskids4water.websiteUrl;
+      console.log('Set learn button href to:', data.uskids4water.websiteUrl);
+    }
+    if(donateBtn) {
+      donateBtn.href = data.uskids4water.websiteUrl;
+      console.log('Set donate button href to:', data.uskids4water.websiteUrl);
+    }
   }
 
   if(page==='program'){
