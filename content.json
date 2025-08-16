@@ -91,14 +91,14 @@
       "bioShort": "A Bharatanatyam dancer and media-arts storyteller, Sahana blends classical technique with contemporary themes. She volunteers with USKids4Water and narrates the feature video."
     },
     {
-      "name": "Kirthana Warrier",
-      "photo": "assets/dancers/kirthana.jpg",
-      "bioShort": "Kirthana brings grace and precision to each piece, with a focus on abhinaya and rhythm. She supports youth education and environmental causes through performance."
-    },
-    {
       "name": "Sarika Rajan",
       "photo": "assets/dancers/sarika.jpg",
       "bioShort": "Sarika\u2019s dynamic stage presence reflects years of disciplined training. She contributes to outreach efforts that expand access to arts and education."
+    },
+    {
+      "name": "Kirthana Warrier",
+      "photo": "assets/dancers/kirthana.jpg",
+      "bioShort": "Kirthana brings grace and precision to each piece, with a focus on abhinaya and rhythm. She supports youth education and environmental causes through performance."
     }
   ]
 }
