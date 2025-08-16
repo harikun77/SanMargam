@@ -36,12 +36,17 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .list li:before{content:"•";color:var(--accent);font-weight:bold;position:absolute;left:0}
 .list.small li{font-size:0.9em;margin:6px 0}
 .vsda-section{margin-top:32px}
-.vsda-header{text-align:center;margin-bottom:24px}
-.vsda-logo-container{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.vsda-header{text-align:left;margin-bottom:24px}
+.vsda-logo-container{display:flex;align-items:center;justify-content:flex-start;gap:16px;margin-bottom:16px;flex-wrap:wrap}
 .vsda-logo{max-width:300px;height:auto}
 .vsda-visit-btn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#00253a;padding:8px 16px;border-radius:999px;font-weight:600;font-size:0.9em}
 .vsda-content{line-height:1.7}
 .vsda-content p{margin-bottom:16px;text-align:justify}
+.video-section{margin-top:32px}
+.video-section h3{margin-bottom:16px;color:var(--accent)}
+.video-container{position:relative;width:100%;max-width:800px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.video-container iframe{width:100%;height:450px;border:1px solid var(--line)}
+.video-caption{text-align:center;margin-top:12px;color:var(--muted);font-size:0.9em}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#0a1118;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px}
 .page-header{margin-top:22px}.profile{display:flex;gap:12px;align-items:flex-start}.profile img{width:96px;height:96px;object-fit:cover;border-radius:12px}
 img{max-width:100%;display:block;border-radius:12px}
