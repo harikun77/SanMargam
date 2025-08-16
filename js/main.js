@@ -104,9 +104,9 @@ async function loadContent(){
     const aboutBtn = document.getElementById('donate-link-about');
     const learnBtn = document.getElementById('donate-link-learn');
     const donateBtn = document.getElementById('donate-link-donate');
-    if(aboutBtn) aboutBtn.href = data.site.donateUrl;
-    if(learnBtn) learnBtn.href = data.site.donateUrl;
-    if(donateBtn) donateBtn.href = data.site.donateUrl;
+    if(aboutBtn) aboutBtn.href = data.uskids4water.websiteUrl;
+    if(learnBtn) learnBtn.href = data.uskids4water.websiteUrl;
+    if(donateBtn) donateBtn.href = data.uskids4water.websiteUrl;
   }
 
   if(page==='program'){
