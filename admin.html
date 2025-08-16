@@ -27,12 +27,14 @@
 <body>
   <div class="admin-wrap">
     <h1>Admin — Edit Site Content</h1>
-    <p class="muted small">Edit fields below and click <strong>Download content.json</strong>. Commit the file to your GitHub repo to publish changes.</p>
+    <p class="muted small">Edit fields below and click <strong>Preview in Browser</strong> to see changes instantly, or <strong>Download content.json</strong> to publish.</p>
 
     <div class="toolbar">
       <input type="file" id="file-input" accept="application/json" style="display:none"/>
       <button class="btn-outline" id="load-btn">Load content.json (from file)</button>
       <button class="btn-outline" id="reset-btn">Reset to current</button>
+      <button class="btn" id="preview-btn">Preview in Browser</button>
+      <button class="btn-outline" id="clear-preview-btn">Clear Preview</button>
       <a class="btn" id="download-btn" download="content.json">Download content.json</a>
       <a class="btn-outline" href="index.html">← Back to site</a>
     </div>
@@ -57,6 +59,7 @@
       <span id="status" class="smallhint"></span>
     </div>
   </div>
+
   <script src="js/admin.js"></script>
 </body>
 </html>

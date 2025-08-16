@@ -1,17 +1,17 @@
 
 async function loadContent(){
-  const res = await fetch('content.json',{cache:'no-store'});
-  const data = await res.json();
+  // local preview override
+  let data = null;
+  try{ const override = localStorage.getItem('contentOverride'); if(override) data = JSON.parse(override);}catch(e){}
+  if(!data){ const res = await fetch('content.json?ts=' + Date.now(), {cache:'no-store'}); data = await res.json(); }
   if(data?.site?.title) document.title = data.site.title;
 
-  // Shared nav/footer
   const uskidsLogo = document.getElementById('logo-uskids');
   const sanmargamLogo = document.getElementById('logo-sanmargam');
   const brandName = document.getElementById('brand-name');
   const rsvpLink = document.getElementById('rsvp-link');
   const donateLink = document.getElementById('donate-link');
   const donateFooter = document.getElementById('donate-link-footer');
-
   if(uskidsLogo) uskidsLogo.src = data.site.logos.uskids;
   if(sanmargamLogo) sanmargamLogo.src = data.site.logos.sanmargam;
   if(brandName) brandName.textContent = data.site.brand;
@@ -20,7 +20,6 @@ async function loadContent(){
   if(donateFooter) donateFooter.href = data.site.donateUrl;
 
   const page = document.documentElement.getAttribute('data-page');
-
   if(page==='home'){
     document.getElementById('home-title').textContent = data.home.hero.title;
     document.getElementById('home-subtitle').textContent = data.home.hero.subtitle;
@@ -37,18 +36,18 @@ async function loadContent(){
     document.getElementById('home-about').textContent = data.home.about;
     document.getElementById('home-goal').textContent = data.home.goal;
 
-    const ul = document.getElementById('funds-list');
-    data.home.fundsHelp.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
+    const ul = document.getElementById('funds-list'); ul.innerHTML='';
+    (data.home.fundsHelp||[]).forEach(t=>{ const li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
 
     document.getElementById('home-venue-side').textContent = data.site.venue;
     document.getElementById('home-address').textContent = data.site.address;
     document.getElementById('home-date-side').textContent = data.site.date;
     document.getElementById('home-time-side').textContent = data.site.time;
     const rsvpSide = document.getElementById('rsvp-link-side');
-    rsvpSide.href = data.site.rsvpUrl; rsvpSide.textContent = new URL(data.site.rsvpUrl).hostname;
+    if (rsvpSide){ rsvpSide.href = data.site.rsvpUrl; rsvpSide.textContent = new URL(data.site.rsvpUrl).hostname; }
 
-    document.getElementById('poster-1').src = data.home.posters[0];
-    document.getElementById('poster-2').src = data.home.posters[1];
+    const p1 = document.getElementById('poster-1'); if(p1) p1.src = (data.home.posters||[])[0] || '';
+    const p2 = document.getElementById('poster-2'); if(p2) p2.src = (data.home.posters||[])[1] || '';
 
     const trio = document.getElementById('dancers-trio');
     const trioCap = document.getElementById('dancers-trio-caption');
@@ -56,12 +55,15 @@ async function loadContent(){
     if(trioCap) trioCap.textContent = data.home.dancersTrioCaption;
 
     const statsDiv = document.getElementById('home-stats');
-    data.home.stats.forEach(s=>{
-      const card=document.createElement('div'); card.className='stat';
-      const span=document.createElement('span'); span.textContent=s.label;
-      const strong=document.createElement('strong'); strong.textContent=s.value;
-      card.append(span,strong); statsDiv.appendChild(card);
-    });
+    if (statsDiv){ 
+      statsDiv.innerHTML='';
+      (data.home.stats||[]).forEach(s=>{
+        const card=document.createElement('div'); card.className='stat';
+        const span=document.createElement('span'); span.textContent=s.label;
+        const strong=document.createElement('strong'); strong.textContent=s.value;
+        card.append(span,strong); statsDiv.appendChild(card);
+      });
+    }
   }
 
   if(page==='uskids'){
@@ -71,12 +73,15 @@ async function loadContent(){
     if(sa) sa.src = data.site.logos.sanmargam;
     document.getElementById('uskids-mission').textContent = data.uskids4water.mission;
     const stats=document.getElementById('uskids-stats');
-    data.uskids4water.stats.forEach(s=>{
-      const card=document.createElement('div'); card.className='stat';
-      const span=document.createElement('span'); span.textContent=s.label;
-      const strong=document.createElement('strong'); strong.textContent=s.value;
-      card.append(span,strong); stats.appendChild(card);
-    });
+    if(stats){
+      stats.innerHTML='';
+      (data.uskids4water.stats||[]).forEach(s=>{
+        const card=document.createElement('div'); card.className='stat';
+        const span=document.createElement('span'); span.textContent=s.label;
+        const strong=document.createElement('strong'); strong.textContent=s.value;
+        card.append(span,strong); stats.appendChild(card);
+      });
+    }
     document.getElementById('pillar-edu').textContent = data.uskids4water.pillars.education;
     document.getElementById('pillar-env').textContent = data.uskids4water.pillars.environment;
     document.getElementById('pillar-health').textContent = data.uskids4water.pillars.health;
@@ -98,17 +103,19 @@ async function loadContent(){
 
   if(page==='dancers'){
     const grid=document.getElementById('dancers-grid');
-    data.dancers.forEach(d=>{
-      const article=document.createElement('article'); article.className='card profile';
-      article.innerHTML = `<img src="${d.photo}" alt="${d.name} headshot"/><div><h3>${d.name}</h3><p class="muted small">${d.bioShort}</p></div>`;
-      grid.appendChild(article);
-    });
+    if(grid){ 
+      grid.innerHTML='';
+      (data.dancers||[]).forEach(d=>{
+        const article=document.createElement('article'); article.className='card profile';
+        article.innerHTML = `<img src="${d.photo}" alt="${d.name} headshot"/><div><h3>${d.name}</h3><p class="muted small">${d.bioShort}</p></div>`;
+        grid.appendChild(article);
+      });
+    }
   }
 
   wireQrModal(data);
 }
 
-// QR Modal
 function wireQrModal(data){
   const modal = document.getElementById('qr-modal'); if(!modal) return;
   const img = document.getElementById('qr-image');

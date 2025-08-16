@@ -1,91 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books Beyond Borders</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { text-align: center; background: #fafafa; padding: 20px; }
-        header img { max-width: 100%; height: auto; }
-        main { padding: 20px; max-width: 900px; margin: auto; }
-        h1 { text-align: center; }
-        .goal ul { list-style-type: disc; margin-left: 20px; }
-        .cta { margin: 20px 0; }
-        .buttons { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
-        .buttons a, .buttons img { display: block; }
-        .buttons a { text-decoration: none; background: #0073e6; color: #fff; padding: 15px 25px; border-radius: 6px; }
-        footer { text-align: center; padding: 20px; background: #f0f0f0; margin-top: 30px; }
-    </style>
+<!doctype html>
+<html lang="en" data-page="home">
+<head><title>Loading…</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script defer src="js/main.js"></script>
 </head>
 <body>
-    <header>
-        <img id="banner" alt="Banner">
-    </header>
-    <main>
-        <h1 id="title"></h1>
-        <p id="main_description"></p>
-        
-        <section class="goal">
-            <p id="goal_intro"></p>
-            <ul id="goal_list"></ul>
-            <p id="pilot_note"></p>
-        </section>
-        
-        <section class="cta">
-            <ul id="cta_list"></ul>
-        </section>
-        
-        <div class="buttons">
-            <a id="donate_button" target="_blank">Donate</a>
-            <img id="qr_code" alt="QR Code" width="120">
+
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img id="logo-uskids" class="logo" alt="USKids4Water logo"/>
+        <img id="logo-sanmargam" class="logo" alt="Sanmargam logo"/>
+        <span class="brand-name" id="brand-name">Books Beyond Borders</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="uskids4water.html">USKids4Water</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="dancers.html">Dancers</a></li>
+        <li><a id="rsvp-link" class="btn" target="_blank" rel="noopener">RSVP</a></li>
+        <li><a id="donate-link" class="btn-outline" target="_blank" rel="noopener">Donate</a></li>
+        <li><button id="donate-qr-btn" class="btn">Donate (QR)</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image: url('assets/nataraja-banner.jpg');">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <p class="eyebrow">Dance for a Cause</p>
+      <h1 id="home-title"></h1>
+      <p class="sub" id="home-subtitle"></p>
+      <div class="chips">
+        <span class="chip" id="home-date"></span>
+        <span class="chip" id="home-time"></span>
+        <span class="chip" id="home-venue"></span>
+      </div>
+      <div class="cta-row">
+        <a id="rsvp-link-hero" class="btn" target="_blank" rel="noopener">RSVP & Tickets</a>
+        <a id="donate-link-hero" class="btn-outline" target="_blank" rel="noopener">Donate</a>
+        <a id="donate-qr-btn-hero" class="btn">Donate (QR)</a>
+        <a id="directions-link" class="btn-outline" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid two">
+      <div>
+        <h2>About the Event</h2>
+        <p id="home-about"></p>
+        <div class="grid two">
+          <div class="card">
+            <p class="muted">Goal</p>
+            <h3 id="home-goal"></h3>
+            <p class="muted">to equip and launch the Rural Tech Hub</p>
+          </div>
+          <div class="card">
+            <p class="muted">How funds help</p>
+            <ul class="list small" id="funds-list"></ul>
+          </div>
         </div>
-    </main>
-    <footer id="footer"></footer>
+      </div>
+      <aside class="card info">
+        <h3>Event Details</h3>
+        <ul class="kv">
+          <li><strong>Venue</strong><span id="home-venue-side"></span></li>
+          <li><strong>Address</strong><span id="home-address"></span></li>
+          <li><strong>Date</strong><span id="home-date-side"></span></li>
+          <li><strong>Show Time</strong><span id="home-time-side"></span></li>
+          <li><strong>RSVP</strong><span><a id="rsvp-link-side" target="_blank" rel="noopener"></a></span></li>
+          <li><strong>Contact</strong><span><a href="mailto:uskids4water@gmail.com">uskids4water@gmail.com</a></span></li>
+        </ul>
+      </aside>
+    </section>
 
-    <script>
-        fetch('content.json')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('banner').src = data.banner_image;
-            document.getElementById('title').textContent = data.title;
-            document.getElementById('main_description').textContent = data.main_description;
-            document.getElementById('goal_intro').textContent = data.goal.intro;
-            
-            const goalList = document.getElementById('goal_list');
-            data.goal.bullets.forEach(item => {
-                if (typeof item === 'string') {
-                    let li = document.createElement('li');
-                    li.textContent = item;
-                    goalList.appendChild(li);
-                } else {
-                    for (let key in item) {
-                        let li = document.createElement('li');
-                        li.textContent = key;
-                        let subul = document.createElement('ul');
-                        item[key].forEach(sub => {
-                            let subli = document.createElement('li');
-                            subli.textContent = sub;
-                            subul.appendChild(subli);
-                        });
-                        li.appendChild(subul);
-                        goalList.appendChild(li);
-                    }
-                }
-            });
+    <section class="card" style="margin-top:8px">
+      <figure class="gallery">
+        <img id="dancers-trio" alt="Dancers group photo placeholder"/>
+        <figcaption class="small muted" id="dancers-trio-caption"></figcaption>
+      </figure>
+    </section>
 
-            document.getElementById('pilot_note').textContent = data.goal.pilot_note;
+    <section class="grid two">
+      <img id="poster-1" alt="Poster 1"/>
+      <img id="poster-2" alt="Poster 2"/>
+    </section>
 
-            const ctaList = document.getElementById('cta_list');
-            data.cta.forEach(item => {
-                let li = document.createElement('li');
-                li.textContent = item;
-                ctaList.appendChild(li);
-            });
+    <section>
+      <h2>Impact Highlights</h2>
+      <div class="stats" id="home-stats"></div>
+    </section>
+  </main>
 
-            document.getElementById('donate_button').href = data.donation.link;
-            document.getElementById('qr_code').src = data.donation.qr_code;
-            document.getElementById('footer').textContent = data.footer;
-        });
-    </script>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong id="footer-brand">Books Beyond Borders</strong>
+        <p class="muted">A community dance fundraiser supporting USKids4Water’s Rural Tech Hub in Madurai.</p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p><a href="mailto:uskids4water@gmail.com">uskids4water@gmail.com</a></p>
+      </div>
+      <div>
+        <strong>Sitemap</strong>
+        <ul class="sitemap">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="uskids4water.html">USKids4Water</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="dancers.html">Dancers</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <a id="donate-link-footer" class="btn" target="_blank" rel="noopener">Donate</a>
+      </div>
+    </div>
+  </footer>
+  <div id="qr-modal" class="qr-modal" aria-hidden="true">
+    <div class="qr-overlay"></div>
+    <div class="qr-dialog" role="dialog" aria-label="Donation QR Code">
+      <button class="qr-close" aria-label="Close">✕</button>
+      <img id="qr-image" alt="Scan to donate"/>
+      <p class="small muted">Scan this code to donate securely via Zeffy</p>
+      <a id="qr-open-link" class="btn-outline" target="_blank" rel="noopener">Open donate page</a>
+    </div>
+  </div>
+
 </body>
 </html>
