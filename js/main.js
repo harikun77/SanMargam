@@ -26,6 +26,10 @@ async function loadContent(){
 
   const page = document.documentElement.getAttribute('data-page');
   if(page==='home'){
+    // Debug: Show loaded goal amount
+    console.log('Home page - Goal amount:', data.home.goal);
+    console.log('Home page - Dancers caption:', data.home.dancersTrioCaption);
+    
     document.getElementById('home-title').textContent = data.home.hero.title;
     document.getElementById('home-subtitle').textContent = data.home.hero.subtitle;
     document.getElementById('home-date').textContent = `Date: ${data.site.date}`;
