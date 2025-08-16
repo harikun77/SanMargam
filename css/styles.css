@@ -14,10 +14,16 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .uskids-title-section{display:flex;align-items:center;justify-content:flex-start;gap:16px;margin:16px 0;flex-wrap:wrap}
 .uskids-title-section .logo{height:48px;width:auto}
 .dancers-bento{display:grid;gap:24px;margin-top:32px}
-.dancer-card{display:grid;grid-template-columns:1fr 2fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.dancer-card{display:grid;grid-template-columns:1fr 2fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);height:400px}
 .dancer-image{display:flex;align-items:stretch;justify-content:stretch;height:100%}
 .dancer-image img{width:100%;height:100%;object-fit:cover;border-radius:12px 0 0 12px}
-.dancer-bio h3{margin:0 0 16px 0;color:var(--accent);font-size:1.4em}
+.dancer-bio{display:flex;flex-direction:column;height:100%}
+.dancer-bio h3{margin:0 0 16px 0;color:var(--accent);font-size:1.4em;flex-shrink:0}
+.dancer-bio-content{flex:1;overflow-y:auto;padding-right:8px}
+.dancer-bio-content::-webkit-scrollbar{width:6px}
+.dancer-bio-content::-webkit-scrollbar-track{background:var(--card)}
+.dancer-bio-content::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.dancer-bio-content::-webkit-scrollbar-thumb:hover{background:var(--accent)}
 .dancer-bio p{line-height:1.6;margin:0 0 16px 0;color:var(--text)}
 .dancer-bio p:last-child{margin-bottom:0}
 @media (max-width:768px){.dancer-card{grid-template-columns:1fr;text-align:center}.dancer-image img{width:100%;height:200px;border-radius:12px}}
