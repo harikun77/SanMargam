@@ -1,104 +1,28 @@
 {
-  "site": {
-    "title": "Books Beyond Borders \u2014 USKids4Water Fundraiser",
-    "brand": "Books Beyond Borders",
-    "rsvpUrl": "https://evite.me/FcHTKKabpf",
-    "donateUrl": "https://www.zeffy.com/en-US/donation-form/books-beyond-borders-by-uskids4water",
-    "donateQR": "assets/donate-qr.jpg",
-    "venue": "Saratoga Civic Theatre",
-    "address": "13777 Fruitvale Ave, Saratoga, CA 95070",
-    "date": "Sunday, August 17, 2025",
-    "time": "5:00 PM",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Saratoga%20Civic%20Theatre%2C%2013777%20Fruitvale%20Ave%2C%20Saratoga%2C%20CA%2095070",
-    "logos": {
-      "uskids": "assets/uskids4water-logo.png",
-      "sanmargam": "assets/sanmargam-logo.png"
-    }
-  },
-  "home": {
-    "hero": {
-      "title": "Books Beyond Borders",
-      "subtitle": "A SanMargam Bharatanatyam fundraiser powering USKids4Water\u2019s Library Learning & Rural Tech Hub in Perayur, Tamil Nadu.",
-      "background": "assets/nataraja-banner.jpg"
+    "title": "Books Beyond Borders",
+    "banner_image": "banner_nataraja.png",
+    "main_description": "Today\u2019s SanMargam fundraiser will support the creation of a Rural Tech Hub in Madurai. This hub will be a space where students can access computers, learn coding and robotics, practice English, and explore new technologies. It\u2019s about giving rural youth the tools to compete in a digital world, opening doors to opportunities that once felt far away.",
+    "goal": {
+        "intro": "Through Sahana Kumar, Sarika Rajan and Kirthana Warrier\u2019s SanMargam Bharatanatyam Fundraiser, we aim to create a Rural Tech Hub in Perayur, Tamil Nadu. This center will give students access to:",
+        "bullets": [
+            "Computers and the internet",
+            "Coding and robotics programs",
+            {
+                "English": [
+                    "Language practice",
+                    "Books and creative learning spaces"
+                ]
+            }
+        ],
+        "pilot_note": "This pilot project will serve as a model for similar hubs in Maharashtra, Rajasthan, Odisha, and beyond."
     },
-    "about": "Books Beyond Borders brings technology, language learning, and creativity to rural students. Your support launches a Rural Tech Hub and Library Learning space in Perayur\u2014computers and internet, coding and robotics, English practice, and inspiring reading corners.",
-    "goal": "$20,000",
-    "fundsHelp": [
-      "Computers, projector, printers (3D & regular)",
-      "Robotics kits, microscopes, electronics",
-      "Tables, chairs, chalkboards, library books"
-    ],
-    "posters": [
-      "assets/library_learning_hub.jpg",
-      "assets/uskids4water_overview.jpg"
-    ],
-    "stats": [
-      {
-        "label": "Youth Volunteers",
-        "value": "1,300+"
-      },
-      {
-        "label": "Countries",
-        "value": "15+"
-      },
-      {
-        "label": "Students Coached in English",
-        "value": "1,500+"
-      },
-      {
-        "label": "Youth-led Projects",
-        "value": "50+"
-      }
-    ],
-    "dancersTrioImage": "assets/dancers/trio-placeholder.jpg",
-    "dancersTrioCaption": "Principal dancers \u2014 Sahana Kumar, Kirthana Warrier & Sarika Rajan"
-  },
-  "uskids4water": {
-    "mission": "USKids4Water elevates awareness\u2014and action\u2014around water, environment, health, and education. Guided by the mission to \u201csow the seed of empathy in everyone\u2019s mind,\u201d student volunteers (with mentor support) design and deliver projects that build skills, expand opportunity, and foster service-minded leadership.",
-    "stats": [
-      {
-        "label": "Founded",
-        "value": "2018"
-      },
-      {
-        "label": "Volunteers",
-        "value": "1,300+ in 15+ countries"
-      },
-      {
-        "label": "Youth-led Projects",
-        "value": "50+"
-      },
-      {
-        "label": "Students Coached",
-        "value": "1,500+ (English)"
-      }
-    ],
-    "pillars": {
-      "education": "Spoken English Program (1:1 and group coaching), Alphabet Commanders (vocabulary/spelling), digital literacy & STEM/robotics, and career-awareness sessions connecting learners with professionals.",
-      "environment": "Save Water / Save Electricity campaigns, tree-planting and recycling drives, and local sustainability projects (including wells and community conservation challenges).",
-      "health": "Community wellness initiatives: hygiene & sanitation education, mental-health awareness activities, nutrition guidance, and periodic food/hygiene kit drives."
+    "donation": {
+        "link": "https://www.zeffy.com/en-US/donation-form/books-beyond-borders-by-uskids4water",
+        "qr_code": "donate_qr.jpeg"
     },
-    "summitImage": "assets/summit_photo.jpg",
-    "ein": "84-1871699"
-  },
-  "program": {
-    "message": "The full program will be unveiled during the event."
-  },
-  "dancers": [
-    {
-      "name": "Sahana Kumar",
-      "photo": "assets/dancers/sahana.jpg",
-      "bioShort": "A Bharatanatyam dancer and media-arts storyteller, Sahana blends classical technique with contemporary themes. She volunteers with USKids4Water and narrates the feature video."
-    },
-    {
-      "name": "Kirthana Warrier",
-      "photo": "assets/dancers/kirthana.jpg",
-      "bioShort": "Kirthana brings grace and precision to each piece, with a focus on abhinaya and rhythm. She supports youth education and environmental causes through performance."
-    },
-    {
-      "name": "Sarika Rajan",
-      "photo": "assets/dancers/sarika.jpg",
-      "bioShort": "Sarika\u2019s dynamic stage presence reflects years of disciplined training. She contributes to outreach efforts that expand access to arts and education."
-    }
-  ]
+    "cta": [
+        "Donate to support books, computers, tables, and essential resources.",
+        "Volunteer to help track reading and encourage young learners on their journey."
+    ],
+    "footer": "Together, we can build a brighter future \u2014 one curious mind at a time. Join us today!"
 }
