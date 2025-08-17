@@ -17,8 +17,8 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .dancers-bento{display:grid;gap:24px;margin-top:32px;grid-template-columns:repeat(2,1fr)}
 .program-bento{display:grid;gap:32px;margin-top:32px}
 .program-item{display:grid;grid-template-columns:1fr 2fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.program-image{display:flex;align-items:center;justify-content:center;min-height:300px}
-.program-image img{width:100%;height:100%;object-fit:cover;border-radius:12px;max-width:100%;max-height:100%}
+.program-image{display:flex;align-items:center;justify-content:center;min-height:400px}
+.program-image img{width:100%;height:100%;object-fit:contain;border-radius:12px;max-width:100%;max-height:100%}
 .program-details{display:flex;flex-direction:column}
 .program-details h3{margin:0 0 16px 0;color:var(--accent);font-size:1.4em}
 .program-details p{line-height:1.6;margin:0 0 16px 0;color:var(--text);text-align:justify}
@@ -43,7 +43,7 @@ a{color:var(--text);text-decoration:none}.container{max-width:var(--container);m
 .dancer-bio-content::-webkit-scrollbar-thumb:hover{background:var(--accent)}
 .dancer-bio p,.dancer-bio-content p{line-height:1.6;margin:0 0 16px 0;color:var(--text);text-align:justify}
 .dancer-bio p:last-child{margin-bottom:0}
-@media (max-width:768px){.dancers-bento{grid-template-columns:1fr}.dancer-image-card{min-height:250px}.dancer-bio-card{min-height:300px}.dancer-card{grid-template-columns:1fr;text-align:center;height:auto}.dancer-image img{width:100%;height:200px;border-radius:12px}.dancer-bio-content{max-height:250px}.program-item{grid-template-columns:1fr;gap:20px}.program-image{min-height:200px}}
+@media (max-width:768px){.dancers-bento{grid-template-columns:1fr}.dancer-image-card{min-height:250px}.dancer-bio-card{min-height:300px}.dancer-card{grid-template-columns:1fr;text-align:center;height:auto}.dancer-image img{width:100%;height:200px;border-radius:12px}.dancer-bio-content{max-height:250px}.program-item{grid-template-columns:1fr;gap:20px}.program-image{min-height:300px}}
 .badge{display:inline-block;background:#0f1a27;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#cfe4ff}.eyebrow{letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:1.1em;font-weight:500}
 .sub{color:#cfe4ff}.chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.chip{background:#0e1620;border:1px solid var(--line);border-radius:12px;padding:8px 10px;color:#cfe4ff}
 @media (max-width:768px){.chips{gap:6px;margin:12px 0}.chip{padding:6px 8px;font-size:13px}}
